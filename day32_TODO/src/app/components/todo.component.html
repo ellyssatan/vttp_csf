@@ -1,0 +1,66 @@
+<h1>Yet another ToDo List</h1>
+
+<form [formGroup]="form" (ngSubmit)="process()">
+    <table>
+        <tr>
+            <td>Name: </td>
+            <td>
+                <input type="text" formControlName="name">  <!-- no need name, name in control -->
+            </td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><input type="email" formControlName="email"
+                [ngClass]="{'error': form.dirty && form.get('email')?.invalid}">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <div> Valid: {{ form.valid }}, invalid: {{ form.invalid }} </div>
+                <div> pristine: {{ form.pristine }}, dirty: {{ form.dirty }} </div>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button type="button" (click)="addItem()">Add Task</button>
+                <button type="submit" [disabled]="form.invalid">Save</button>
+            </td>
+        </tr>
+    </table>
+
+    <div *ngIf="todosArray.length == 0">
+        Your To-Do List is empty
+    </div>
+    <table *ngIf="todosArray.length > 0">
+        <thead>
+            <tr>
+                <td>Task</td>
+                <td>Priority</td>
+                <td>Due date</td>
+            </tr>
+        </thead>
+        <tbody formArrayName="lineItems">
+            <!-- <tr *ngFor="let li of lineItems.controls; let idx = index" [formGroup]="li"> -->
+            <tr *ngFor="let li of todosArray.controls; let idx = index" [formGroupName]="idx">
+                <td>
+                    <input type="text" placeholder="Task" size="30" formControlName="task">
+                </td>
+                <td>
+                    <select formControlName="priority" aria-placeholder="Priority">
+                        <!-- <option *ngFor="let i of priorities; let idx = index">
+                        {{ i }}
+                        </option> -->
+                    </select>
+                </td>
+                <td>
+                    <input type="date" placeholder="Due Date" formControlName="dueDate">
+                </td>
+                <td>
+                    <button type="button" (click)="deleteItem(idx)">X</button>
+                </td>
+            </tr>
+        </tbody>
+    </table> 
+</form>
