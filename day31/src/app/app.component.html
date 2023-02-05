@@ -1,0 +1,15 @@
+<h1>Hello, World</h1>
+<!-- <app-picture [imageUrl] = "image"></app-picture> -->
+<!-- <app-picture [width]="imageWidth" (onClicked)="imageClicked($event)"></app-picture> -->
+
+<div *ngIf="(images.length % 2) > 0">
+  <h3>Odd number of images</h3>
+</div>
+<div *ngIf="(images.length % 2) <= 0">
+  <h3>Even number of images</h3>
+</div>
+
+<app-picture *ngFor="let img of images"
+  [imageUrl]="img"
+  (onClicked)="imageClicked($event)">
+</app-picture>

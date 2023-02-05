@@ -1,0 +1,10 @@
+p {
+    font-size: 2em;
+    color: aquamarine;
+}
+
+.thumbnail {
+    width: 30vw;
+    border: red 2px solid;
+    border-radius: 5px;
+}

@@ -1,0 +1,11 @@
+<p>picture works!</p>
+
+<div>
+    <img src="{{imageUrl}}" class="thumbnail">
+
+    <img [src]="imageUrl" class="thumbnail" [style.width]="width + 'vw'" (click)="imageClicked()">
+</div>
+<div>
+    <button type="button" (click)="resize(3)">+</button>
+    <button type="button" (click)="resize(-3)">-</button>
+</div>
