@@ -1,0 +1,7 @@
+<div *ngIf="book">
+    <h3>{{ book.title }}</h3>
+
+    <h4>Authors: {{ book.authors }}</h4>
+    <h4>Description: {{ book.description }}</h4>
+    <a [routerLink]="['/']">Back</a>
+</div>
