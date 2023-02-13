@@ -8,17 +8,17 @@ import { City } from "./models";
 export class WeatherService {
 
     countries = [
-        { countryName :'China', city : 'Beijing' },
-        { countryName :'Malaysia', city : 'Kuala Lumpur' },
-        { countryName :'India', city : 'New Delhi' },
-        { countryName :'Singapore', city : 'Singapore' }
+        { country :'China', city : 'Beijing' },
+        { country :'Malaysia', city : 'Kuala Lumpur' },
+        { country :'India', city : 'New Delhi' },
+        { country :'Singapore', city : 'Singapore' }
     ]
 
     countriesImg = [
-        { city :'Beijing', imgUrl : 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.britannica.com%2Fplace%2FBeijing&psig=AOvVaw0J0UvNv7usTrJoZEDrQHO4&ust=1676354193719000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCJDguJPokf0CFQAAAAAdAAAAABAE' },
-        { city :'Kuala Lumpur', imgUrl : 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fthehoneycombers.com%2Fsingapore%2Fkuala-lumpur-travel-guide-2%2F&psig=AOvVaw2ScgJ2tWBbGxLJ7S8YOUC_&ust=1676354247911000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCJjcoq3okf0CFQAAAAAdAAAAABAE' },
-        { city :'New Delhi', imgUrl : 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tripadvisor.com.sg%2FTourism-g304551-New_Delhi_National_Capital_Territory_of_Delhi-Vacations.html&psig=AOvVaw1IXZbx2ptjk95vXYqnIxwo&ust=1676354267124000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCPil4rbokf0CFQAAAAAdAAAAABAE' },
-        { city :'Singapore', imgUrl : 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.cnn.com%2Ftravel%2Farticle%2Fsingapore-travel-covid-19%2Findex.html&psig=AOvVaw36uVysIK1Pd46dcyxML9j9&ust=1676354294382000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCPilu8Pokf0CFQAAAAAdAAAAABAE' }
+        { city :'Beijing', image : 'https://cdn.britannica.com/03/198203-050-138BB1C3/entrance-Gate-of-Divine-Might-Beijing-Forbidden.jpg' },
+        { city :'Kuala Lumpur', image : 'https://static.thehoneycombers.com/wp-content/uploads/sites/2/2018/06/Kuala-Lumpur-travel-guide-KL-food-hotels-things-to-do-900x643.png' },
+        { city :'New Delhi', image : 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/23/c6/0f/img-20160507-135554-largejpg.jpg?w=400&h=300&s=1' },
+        { city :'Singapore', image : 'https://media.cnn.com/api/v1/images/stellar/prod/191212182124-04-singapore-buildings.jpg?q=w_3000,h_1996,x_0,y_0,c_fill' }
     ]
 
     constructor(private httpClient : HttpClient){}
@@ -32,8 +32,8 @@ export class WeatherService {
     }
 
     addCity(city : City) {
-        this.countries.push({ countryName : city.country, city : city.city })
-        this.countries.sort((a, b) => (a.countryName > b.countryName ? 1 : -1))
-        this.countriesImg.push({ city : city.city, imgUrl: `${city.image}` })
+        this.countries.push({ country : city.country, city : city.city })
+        this.countries.sort((a, b) => (a.country > b.country ? 1 : -1))
+        this.countriesImg.push({ city : city.city, image: `${city.image}` })
     }
 }

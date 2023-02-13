@@ -25,17 +25,17 @@ export class CitiesComponent implements OnInit {
 
   createForm() : FormGroup {
     return this.fb.group({
-      countryName : this.fb.control(''),
+      country : this.fb.control(''),
       city : this.fb.control(''),
       image : this.fb.control('')
     })
   }
 
   add() {
-    const countryName = this.form?.value['countryName']
+    const country = this.form?.value['country']
     const city = this.form?.value['city']
     const image = this.form?.value['image']
-    this.cityObj = { country : countryName, city : city, image : image }
+    this.cityObj = { country : country, city : city, image : image }
     this.weatherSvc.addCity(this.cityObj)
     this.router.navigate(['/'])
   }
