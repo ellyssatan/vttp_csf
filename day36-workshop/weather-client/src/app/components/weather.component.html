@@ -2,6 +2,7 @@
     <mat-card-header>
         <mat-card-title>{{ model.cityName }}</mat-card-title>
         <mat-card-subtitle>{{ model.description }}</mat-card-subtitle>
+        <img src="http://openweathermap.org/img/wn/{{model.icon}}@2x.png"/>
     </mat-card-header>
     <mat-card-content>
         <p>Temperature: {{ model.temp }}K</p>

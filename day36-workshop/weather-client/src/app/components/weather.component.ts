@@ -16,7 +16,7 @@ export class WeatherComponent implements OnInit, OnDestroy {
   country ?: string
   city : string = 'Singapore'
   image ?: string
-  model = new Weather('Singapore', 0, 0, 0, "", 0, 0)
+  model = new Weather('Singapore', 0, 0, 0, "", 0, 0, "")
   param$ !: Subscription
 
   constructor(private weatherSvc : WeatherService,
@@ -49,7 +49,8 @@ export class WeatherComponent implements OnInit, OnDestroy {
           result.main.humidity,
           result.weather[0].description,
           result.wind.speed,
-          result.wind.deg
+          result.wind.deg,
+          result.weather[0].icon
         )
       }).catch((err)=> {
         console.log(err)

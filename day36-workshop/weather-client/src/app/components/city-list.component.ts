@@ -9,10 +9,12 @@ import { WeatherService } from '../weather.service';
 export class CityListComponent implements OnInit {
 
   cities : any
+  images : any
   constructor(private weatherSvc : WeatherService) {}
 
   ngOnInit(): void {
     this.cities = this.weatherSvc.countries
+    this.images = this.weatherSvc.countriesImg
   }
 
 }
