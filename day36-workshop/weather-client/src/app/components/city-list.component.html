@@ -1,7 +1,7 @@
 <mat-nav-list>
     <div>
-        <a mat-list-item *ngFor="let c of cities; let i = index;" [routerLink]="['weather', c.city]">
-            <img src= {{images[i].image}} height="50px"/>
+        <a mat-list-item *ngFor="let c of cities" [routerLink]="['weather', c.city]">
+            <img src= {{c.image}} height="50px"/>
             {{ c.city }} -- {{ c.country }}
         </a>
     </div>
