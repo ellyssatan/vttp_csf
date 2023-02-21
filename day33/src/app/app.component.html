@@ -1,0 +1,42 @@
+<h1>Users</h1>
+<app-user-details (onUserDetail) = "process($event)" #userDetail>
+  <div>
+    <button type="button" (click)="updateUser()">Update</button>
+    <button type="button" (click)="deleteUser()">Delete</button>
+    <button type="submit">Save</button>
+  </div>
+</app-user-details>
+
+<mat-toolbar color="primary">
+
+</mat-toolbar>
+
+<mat-form-field appearance="outline">
+  <mat-label>Name</mat-label>
+  <input type="text" matInput placeholder="Your name">
+
+
+
+</mat-form-field>
+
+<mat-form-field appearance="outline" class="form-field">
+  <mat-label>Name</mat-label>
+  <input type="text" matInput placeholder="Your name">
+  <mat-icon matSuffix>email</mat-icon>
+  <mat-hint align="end">Your email</mat-hint>
+</mat-form-field>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

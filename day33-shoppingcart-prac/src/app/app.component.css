@@ -1,0 +1,10 @@
+.flex-container {
+    display: flex;
+    margin: auto;
+    width: 80%;
+}
+
+.flex-child {
+    flex: 1;
+    border: 2px;
+} 
